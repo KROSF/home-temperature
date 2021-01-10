@@ -1,5 +1,6 @@
 <script lang="typescript">
   import { onMount } from "svelte";
+  import Card from "./Card.svelte";
   interface Sensor {
     temperature: number;
     humidity: number;
@@ -20,7 +21,13 @@
 <style>
 </style>
 
-<div class="flex flex-col justify-center items-center">
-  <span>{data.temperature}</span>
-  <span>{data.humidity}</span>
+<div class="flex flex-col justify-center items-center h-full bg-gray-50">
+  <div class="grid grid-cols-12 gap-4">
+    <Card
+      name="temperature"
+      icon="🌡"
+      value={data.temperature}
+      bgIcon="bg-red-50" />
+    <Card name="humidity" icon="💦" value={data.humidity} bgIcon="bg-blue-50" />
+  </div>
 </div>

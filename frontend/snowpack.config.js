@@ -1,7 +1,6 @@
 const httpProxy = require("http-proxy");
 const proxy = httpProxy.createServer({
   target: "http://192.168.3.8/",
-  ignorePath: true,
 });
 
 /** @type {import("snowpack").SnowpackUserConfig } */
